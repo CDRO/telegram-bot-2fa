@@ -29,4 +29,16 @@ class Application
     {
         (new WebhookRegistry($this->registry))->handle();
     }
+
+    /**
+     * Run the 2FA distribution
+     */
+    public function run()
+    {
+        $data = $this->registry->get();
+
+        if(!empty($data->{$_POST['chat_id']})) {
+            $client->sendMessage($_POST['chat_id'], $_POST['text']);
+        }
+    }
 }
