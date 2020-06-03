@@ -4,6 +4,7 @@ namespace Cdro\TelegramBot2FA;
 
 use \Cdro\TelegramBotCore\Client\Client;
 use \Cdro\TelegramBotCore\Registry\BasicRegistry;
+use \Cdro\TelegramBotCore\Helper\WebhookRegistry;
 use \Cdro\TelegramBotCore\Security\SimpleLayer as SecurityLayer;
 
 class Application
@@ -26,7 +27,7 @@ class Application
      */
     public function runWebhook()
     {
-        $handler = new Webhook($this->registry);
+        $handler = new WebhookRegistry($this->registry);
 
         $handler->handle();
     }
