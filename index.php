@@ -12,6 +12,11 @@ foreach($autoloads as $autoload) {
 }
 
 (new \Cdro\TelegramBot2FA\Application(
-    \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN)
-    )
+    \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN),
+    function() {
+        if($_REQUEST['safeToken'] !== SAFE_TOKEN) {
+            header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+            die;
+        }
+    })
 )->runWebhook();
