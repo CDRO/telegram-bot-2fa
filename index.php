@@ -11,4 +11,7 @@ foreach($autoloads as $autoload) {
     }
 }
 
-(new \Cdro\TelegramBot2FA\Application())->run();
+(new \Cdro\TelegramBot2FA\Application(
+    \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN)
+    )
+)->runWebhook();
