@@ -1,0 +1,21 @@
+{
+  "name": "cdro/telegram-bot-2fa-auth",
+  "description": "Simple Telegram Bot for 2FA support",
+  "type": "library",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Tizian Schmidlin",
+      "role": "Project Owner"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "cdro/telegram-bot-core": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cdro\\TelegramBot2FA\\": "src/"
+    }
+  }
+}
