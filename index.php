@@ -11,8 +11,8 @@ foreach($autoloads as $autoload) {
     }
 }
 
-define('BOT_TOKEN', $_ENV['bot_token']);
-define('SAFE_TOKEN', $_ENV['safe_token']);
+define('BOT_TOKEN', $_ENV['bot_token'] ?? getenv('bot_token') ?? $_SERVER['bot_token']);
+define('SAFE_TOKEN', $_ENV['safe_token'] ?? getenv('safe_token') ?? $_SERVER['safe_token']);
 
 (new \Cdro\TelegramBot2FA\Application(
     \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN),
