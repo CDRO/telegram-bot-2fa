@@ -13,7 +13,7 @@ class Application
     /**
      *
      */
-    public function __construct(Client $client callable $securityLayerCallback)
+    public function __construct(Client $client, callable $securityLayerCallback)
     {
         (new SecurityLayer)->check($securityLayerCallback);
 
@@ -38,7 +38,7 @@ class Application
         $data = $this->registry->get();
 
         if(!empty($data->{$_POST['chat_id']})) {
-            $client->sendMessage($_POST['chat_id'], $_POST['text']);
+            $this->client->sendMessage($_POST['chat_id'], $_POST['text']);
         }
     }
 }
