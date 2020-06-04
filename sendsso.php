@@ -11,6 +11,8 @@ foreach($autoloads as $autoload) {
     }
 }
 
+define('BOT_TOKEN', $_ENV['bot_token']);
+
 (new \Cdro\TelegramBot2FA\Application(
     \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN),
     function() {
