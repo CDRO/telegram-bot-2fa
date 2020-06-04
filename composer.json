@@ -1,7 +1,7 @@
 {
   "name": "cdro/telegram-bot-2fa-auth",
   "description": "Simple Telegram Bot for 2FA support",
-  "type": "telegram-bot",
+  "type": "cakephp-plugin",
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "authors": [
