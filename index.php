@@ -17,7 +17,7 @@ define('SAFE_TOKEN', $_ENV['safe_token'] ?? getenv('safe_token') ?? $_SERVER['sa
 (new \Cdro\TelegramBot2FA\Application(
     \Cdro\TelegramBotCore\Client\Factory::getInstance(BOT_TOKEN),
     function() {
-        if($_REQUEST['safeToken'] !== SAFE_TOKEN) {
+        if($_REQUEST['token'] !== SAFE_TOKEN) {
             header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ');
             die;
         }
