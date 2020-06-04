@@ -3,6 +3,7 @@
   "description": "Simple Telegram Bot for 2FA support",
   "type": "library",
   "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Tizian Schmidlin",
