@@ -2,6 +2,7 @@
 
 namespace Cdro\TelegramBot2FA;
 
+use Cdro\TelegramBot2FA\Responder\SsoRegistrationResponder;
 use \Cdro\TelegramBotCore\Client\Client;
 use \Cdro\TelegramBotCore\Registry\BasicRegistry;
 use \Cdro\TelegramBotCore\Helper\WebhookRegistry;
@@ -18,7 +19,7 @@ class Application
         (new SecurityLayer)->check($securityLayerCallback);
 
         $this->client = $client;
-        $this->registry = (new BasicRegistry($client, dirname(dirname(dirname(__DIR__))) . '/sso_static.json'))->load();
+        $this->registry = (new BasicRegistry(new SsoRegistrationResponder($client), dirname(dirname(dirname(__DIR__))) . '/sso_static.json'))->load();
     }
 
     /**
