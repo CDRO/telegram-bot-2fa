@@ -18,7 +18,7 @@ class Application
         (new SecurityLayer)->check($securityLayerCallback);
 
         $this->client = $client;
-        $this->registry = (new BasicRegistry($client, dirname(__DIR__) . '/static.json'))->load();
+        $this->registry = (new BasicRegistry($client, dirname(dirname(dirname(__DIR__))) . '/sso_static.json'))->load();
     }
 
     /**
